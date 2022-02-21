@@ -1,0 +1,110 @@
+[
+	{
+		"id": 1,
+		"name": "Legend",
+		"minElo": 2000,
+		"maxElo": 3000,
+		"color": "#aaa",
+		"textColor": "#aaa",
+		"image": "legend"
+	},
+	{
+		"id": 2,
+		"name": "Pro II",
+		"minElo": 1900,
+		"maxElo": 1999,
+		"color": "#411c9d",
+		"textColor": "#5d29e1",
+		"image": "pro2"
+	},
+	{
+		"id": 3,
+		"name": "Pro I",
+		"minElo": 1800,
+		"maxElo": 1899,
+		"color": "#5d29e1",
+		"textColor": "#5d29e1",
+		"image": "pro1"
+	},
+	{
+		"id": 4,
+		"name": "Elite II",
+		"minElo": 1700,
+		"maxElo": 1799,
+		"color": "#a3192a",
+		"textColor": "#e9243c",
+		"image": "elite2"
+	},
+	{
+		"id": 5,
+		"name": "Elite I",
+		"minElo": 1600,
+		"maxElo": 1699,
+		"color": "#e9243c",
+		"textColor": "#e9243c",
+		"image": "elite1"
+	},
+	{
+		"id": 6,
+		"name": "Master II",
+		"minElo": 1500,
+		"maxElo": 1599,
+		"color": "#092c6a",
+		"textColor": "#0d3f98",
+		"image": "master2"
+	},
+	{
+		"id": 7,
+		"name": "Master I",
+		"minElo": 1400,
+		"maxElo": 1499,
+		"color": "#0d3f98",
+		"textColor": "#0d3f98",
+		"image": "master1"
+	},
+	{
+		"id": 8,
+		"name": "Veteran II",
+		"minElo": 1300,
+		"maxElo": 1399,
+		"color": "#316c09",
+		"textColor": "#469b0d",
+		"image": "veteran2"
+	},
+	{
+		"id": 9,
+		"name": "Veteran I",
+		"minElo": 1200,
+		"maxElo": 1299,
+		"color": "#469b0d",
+		"textColor": "#469b0d",
+		"image": "veteran1"
+	},
+	{
+		"id": 10,
+		"name": "Gold II",
+		"minElo": 1100,
+		"maxElo": 1199,
+		"color": "#9a5d09",
+		"textColor": "#dd860d",
+		"image": "gold2"
+	},
+	{
+		"id": 11,
+		"name": "Gold I",
+		"minElo": 1000,
+		"maxElo": 1099,
+		"color": "#dd860d",
+		"textColor": "#dd860d",
+		"image": "gold1"
+	},
+	{
+		"id": 12,
+		"name": "Silver",
+		"minElo": 0,
+		"maxElo": 999,
+		"color": "#6b7b94",
+		"textColor": "#6b7b94",
+		"image": "silver"
+	}
+]
