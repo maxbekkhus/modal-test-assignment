@@ -28,6 +28,7 @@ const ReworkModal: FC<ReworkModalProps> = ({
       <SHeaderContainer>
         <Image
           src={headerImg}
+          priority
         />
         <SHeaderTextContainer>
           <Paragraph center>
