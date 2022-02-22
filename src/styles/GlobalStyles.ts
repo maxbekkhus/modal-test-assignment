@@ -12,6 +12,7 @@ export default createGlobalStyle`
     -webkit-font-font-smooth: antialiased;
     -moz-osx-font-smooth: grayscale;
     -webkit-tap-highlight-color: transparent;
+    font-family: ${({ theme }) => theme.font.primary};
   }
 
   html {

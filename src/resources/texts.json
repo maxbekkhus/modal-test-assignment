@@ -4,5 +4,10 @@
     "More accurate user rankings",
     "Double the amount of ranks",
     "Faster and better matchmaking queues"
-  ]
+  ],
+  "rankInterval": [
+    "Your Preliminary Rank is between ",
+    " and "
+  ],
+  "unlock": "Play 3 games in order to unlock your new rank!"
 }

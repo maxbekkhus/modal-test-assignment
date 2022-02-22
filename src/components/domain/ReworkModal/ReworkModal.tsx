@@ -6,19 +6,22 @@ import Paragraph from 'src/components/generic/Paragraph';
 import { 
   SButtonContainer,
   SHeaderContainer, 
-  SHeaderTextContainer, 
-  SRankContainer
+  SHeaderTextContainer
 } from './styled';
 
 import headerImg from '../../../../public/images/ranking_header_popover.png';
 import textLabels from 'src/resources/texts.json';
 import List from 'src/components/generic/List';
+import PrelimRank, { PrelimRankProps } from '../PrelimRank/PrelimRank';
 
-
-type ReworkModalProps = ModalProps;
+type ReworkModalProps = {
+  isOpen: boolean;
+  close: () => void;
+} & PrelimRankProps;
 
 const ReworkModal: FC<ReworkModalProps> = ({
-  children,
+  userElo,
+  ranks,
   ...modalProps
 }) => {
   return (
@@ -37,7 +40,7 @@ const ReworkModal: FC<ReworkModalProps> = ({
           <List items={textLabels.list} />
         </SHeaderTextContainer>
       </SHeaderContainer>
-      <SRankContainer/>
+      <PrelimRank userElo={userElo} ranks={ranks} />
       <SButtonContainer/>
     </Modal>
   )

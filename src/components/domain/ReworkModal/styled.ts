@@ -6,11 +6,6 @@ export const SHeaderContainer = styled.div`
   width: 100%;
   width: 630px;
   background-color: ${({ theme }) => `${theme.color.surfaceLight}66`};
-
-  img {
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-  }
 `;
 
 export const SHeaderTextContainer = styled.div`
@@ -41,10 +36,7 @@ export const SHeaderParagraph = styled.p`
   color: ${({ theme }) => theme.color.onSurface};
 `;
 
-export const SRankContainer = styled.div`
-  width: 100%;
-  height: 256px;
-`;
+
 
 export const SButtonContainer = styled.div`
   width: 100%;

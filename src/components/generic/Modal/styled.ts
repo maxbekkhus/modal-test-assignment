@@ -10,6 +10,7 @@ export const SModal = styled(motion.div)`
   border-radius: 4px;
   box-shadow: 3px 3px 6px #0000007A;
   opacity: 0;
+  overflow: hidden;
 `;
 
 export const SModalInner = styled.div`
@@ -30,15 +31,20 @@ export const SModalBackground = styled(motion.div)`
 export const SModalCloseButton = styled.button`
   position: absolute;
   z-index: 10;
-  top: 16px;
-  right: 16px;
+  top: 8px;
+  right: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   background-color: transparent;
   outline: none;
   border: none;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
