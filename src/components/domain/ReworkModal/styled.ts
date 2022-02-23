@@ -5,7 +5,7 @@ export const SHeaderContainer = styled.div`
   display: flex;
   width: 100%;
   width: 630px;
-  background-color: ${({ theme }) => `${theme.color.surfaceLight}66`};
+  background-color: ${({ theme }) => `${theme.color.surface200}66`};
 `;
 
 export const SHeaderTextContainer = styled.div`
@@ -39,7 +39,9 @@ export const SHeaderParagraph = styled.p`
 
 
 export const SButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 10%;
   width: 100%;
-  height: 70px;
-  background-color: ${({ theme }) => theme.color.surfaceLight};
+  background-color: ${({ theme }) => theme.color.surface200};
 `;

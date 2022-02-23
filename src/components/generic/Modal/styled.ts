@@ -6,7 +6,7 @@ export const SModal = styled(motion.div)`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: ${({ theme }) => theme.color.surface};
+  background-color: ${({ theme }) => theme.color.surface100};
   border-radius: 4px;
   box-shadow: 3px 3px 6px #0000007A;
   opacity: 0;

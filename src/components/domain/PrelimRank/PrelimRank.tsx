@@ -1,10 +1,21 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import Paragraph from 'src/components/generic/Paragraph';
 import { Rank } from 'src/models/Rank';
-import { SPrelimRankBadge, SPrelimRankContainer, SPrelimRankShield, SPrelimRankShieldRow, SPrelimRankSpan } from './styled';
+import { 
+  SPrelimRankBadge, 
+  SPrelimRankBox, 
+  SPrelimRankContainer, 
+  SPrelimRankGradientLine, 
+  SPrelimRankShield, 
+  SPrelimRankShieldRow, 
+  SPrelimRankSpan 
+} from './styled';
 import jsonText from 'src/resources/texts.json';
 import Image from 'next/image';
-import { getCurrentRankIndex, getRankIntervalIndicies, getRankRange } from 'src/utils/rankUtils';
+import { 
+  getRankIntervalIndicies, 
+  getRankRange 
+} from 'src/utils/rankUtils';
 
 export type PrelimRankProps = {
   ranks: Rank[];
@@ -13,15 +24,15 @@ export type PrelimRankProps = {
 
 const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
 
-  const currentRankIndex = useMemo(
-    () => getCurrentRankIndex(userElo, ranks)
-  , [ranks, userElo]);
-
   const rankRange = useMemo(
     () => getRankRange(userElo, ranks)
   , [userElo, ranks]);
 
-  const rankIntervalIndicies = useMemo<number[]>(
+  const rankColorRange = useMemo(
+    () => rankRange.map(rank => rank.color)
+  , [rankRange]);
+
+  const rankIntervalIndicies = useMemo(
     () => getRankIntervalIndicies(userElo, ranks)
   , [userElo, ranks]);
 
@@ -42,20 +53,30 @@ const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
   }, [rankIntervalIndicies]);
 
   const renderRankShields = useCallback(() => (
-    rankRange.map((rank) => (
-      <SPrelimRankShield key={`${rank.id}${rank.name}`}>
-        <Image src={`/images/${rank.image}.png`} width={621} height={621} />
+    rankRange.map((rank, index) => (
+      <SPrelimRankShield key={`${rank.id}${rank.name}`} index={index}>
+        <Image 
+          src={`/images/${rank.image}.png`} 
+          width={621} 
+          height={621}
+          priority
+        />
         <SPrelimRankBadge>
           {rank.name}
         </SPrelimRankBadge>
       </SPrelimRankShield>
     ))
-  ), [ranks, userElo, rankRange]);
+  ), [rankRange]);
   
   return (
     <SPrelimRankContainer>
       {renderRankParagraph()}
       <SPrelimRankShieldRow>
+        <SPrelimRankGradientLine gradientColors={rankColorRange} />
+        <SPrelimRankBox 
+          leftIndex={rankRange.findIndex(rank => rank.name === ranks[rankIntervalIndicies[0]].name)}
+          rightIndex={rankRange.findIndex(rank => rank.name === ranks[rankIntervalIndicies[1]].name)}
+        />
         {renderRankShields()}
       </SPrelimRankShieldRow>
       <Paragraph center>
