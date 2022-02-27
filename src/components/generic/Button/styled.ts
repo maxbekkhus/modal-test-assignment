@@ -28,9 +28,9 @@ export const SButton = styled.button<SButtonProps>`
   border: none;
   align-self: center;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 10px 24px;
+  padding: 12px 24px;
   cursor: pointer;
   outline: none;
 

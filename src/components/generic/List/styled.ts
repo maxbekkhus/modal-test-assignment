@@ -13,10 +13,12 @@ export const SListItem = styled.li`
   color: ${({ theme }) => theme.color.onSurface};
 
   + li {
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   > svg {
-    margin-right: 6px;
+    margin-right: 12px;
+    width: 10px;
+    height: 14px;
   }
 `;

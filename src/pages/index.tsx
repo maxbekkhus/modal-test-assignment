@@ -14,9 +14,9 @@ const Home: NextPage = () => {
   const userElo = useMemo<number | null>(() => {
     const { query } = router;
 
-    const arg = parseInt(query.userElo as string);
+    const param = parseInt(query.userElo as string);
     
-    return isNaN(arg) ? null: arg; 
+    return isNaN(param) ? null: param; 
   }, [router]);
 
   if(error) {

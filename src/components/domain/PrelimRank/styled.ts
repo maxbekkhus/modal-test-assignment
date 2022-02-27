@@ -2,9 +2,7 @@ import Paragraph from "src/components/generic/Paragraph";
 import styled from "styled-components";
 
 export const SPrelimRankContainer = styled.div`
-  width: 100%;
   padding: 32px 0;
-  width: 630px;
 `;
 
 export const SPrelimRankMsg = styled(Paragraph)`
@@ -26,7 +24,7 @@ export const SPrelimRankShieldRow = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 8px;
-  margin: 14px 36px;
+  margin: 14px 24px;
   padding: 8px 0;
 `;
 
@@ -46,13 +44,13 @@ export const SPrelimRankShield = styled.div<SPrelimRankShieldProps>`
 `;
 
 export const SPrelimRankBadge = styled.div`
-  width: 70%;
+  width: 90%;
   text-align: center;
   text-justify: center;
   background-color: ${({ theme }) => theme.color.surface300};
   color: ${({ theme }) => theme.color.onSurface};
   border-radius: 44px;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 12px;
   padding: 6px 0;
 `;
@@ -62,7 +60,7 @@ type SPrelimRankBoxProps = {
   rightIndex: number;
 }
 
-export const SPrelimRankBox = styled.div<SPrelimRankBoxProps>`
+export const SPrelimRankHighlight = styled.div<SPrelimRankBoxProps>`
   grid-area: ${({ leftIndex, rightIndex }) => `1 / ${leftIndex + 1} / 2 / ${rightIndex + 2}`};
   background-color: ${({ theme }) => theme.color.surface200};
   border-radius: 4px;

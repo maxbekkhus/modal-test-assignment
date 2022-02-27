@@ -3,7 +3,7 @@ import Paragraph from 'src/components/generic/Paragraph';
 import { Rank } from 'src/models/Rank';
 import { 
   SPrelimRankBadge, 
-  SPrelimRankBox, 
+  SPrelimRankHighlight, 
   SPrelimRankContainer, 
   SPrelimRankGradientLine, 
   SPrelimRankShield, 
@@ -24,17 +24,20 @@ export type PrelimRankProps = {
 
 const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
 
+  // Range of 5 ranks to display
   const rankRange = useMemo(
     () => getRankRange(userElo, ranks)
   , [userElo, ranks]);
 
+  // Range of 5 rank colors for generating gradient
   const rankColorRange = useMemo(
     () => rankRange.map(rank => rank.color)
   , [rankRange]);
 
+  // Indicies of prelim boundries
   const rankIntervalIndicies = useMemo(
-    () => getRankIntervalIndicies(userElo, ranks)
-  , [userElo, ranks]);
+    () => getRankIntervalIndicies(userElo, rankRange)
+  , [userElo, rankRange]);
 
   const renderRankParagraph = useCallback(() => {
     const [low, high] = rankIntervalIndicies;
@@ -73,9 +76,9 @@ const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
       {renderRankParagraph()}
       <SPrelimRankShieldRow>
         <SPrelimRankGradientLine gradientColors={rankColorRange} />
-        <SPrelimRankBox 
-          leftIndex={rankRange.findIndex(rank => rank.name === ranks[rankIntervalIndicies[0]].name)}
-          rightIndex={rankRange.findIndex(rank => rank.name === ranks[rankIntervalIndicies[1]].name)}
+        <SPrelimRankHighlight 
+          leftIndex={rankIntervalIndicies[0]}
+          rightIndex={rankIntervalIndicies[1]}
         />
         {renderRankShields()}
       </SPrelimRankShieldRow>

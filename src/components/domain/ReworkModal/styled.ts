@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
+export const SReworkModal = styled.div`
+  width: 630px;
+
+  @media only screen and (max-width: 630px) {
+    width: auto;
+  }
+`;
+
 export const SHeaderContainer = styled.div`
   position: relative;
   display: flex;
-  width: 100%;
-  width: 630px;
   background-color: ${({ theme }) => `${theme.color.surface200}66`};
 `;
 
@@ -36,12 +42,13 @@ export const SHeaderParagraph = styled.p`
   color: ${({ theme }) => theme.color.onSurface};
 `;
 
-
-
 export const SButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding: 16px 10%;
-  width: 100%;
+  justify-content: center;
+  padding: 16px 0;
   background-color: ${({ theme }) => theme.color.surface200};
+
+  button + button {
+    margin-left: 16px;
+  }
 `;

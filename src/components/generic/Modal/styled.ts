@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const SModal = styled(motion.div)`
+  display: flex;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -11,6 +12,12 @@ export const SModal = styled(motion.div)`
   box-shadow: 3px 3px 6px #0000007A;
   opacity: 0;
   overflow: hidden;
+
+  @media only screen and (max-width: 630px) {
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
 `;
 
 export const SModalInner = styled.div`
