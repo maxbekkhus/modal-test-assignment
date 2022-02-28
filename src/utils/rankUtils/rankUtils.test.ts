@@ -1,6 +1,6 @@
 import { Rank } from 'src/models/Rank';
 import jsonRanks from 'src/resources/ranks.json';
-import { clampElo, getCurrentRankIndex, getRankIntervalIndicies, getRankRange, MAX_ELO } from './rankUtils';
+import { clampElo, getCurrentRankIndex, getRankIntervalIndicies, getRankRange } from './rankUtils';
 
 describe('Rank Utils', () => {
   const mockRanks: Rank[] = jsonRanks;

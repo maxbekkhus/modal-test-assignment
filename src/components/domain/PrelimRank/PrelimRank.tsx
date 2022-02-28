@@ -53,7 +53,7 @@ const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
         </SPrelimRankSpan>
       </Paragraph>
     )
-  }, [rankIntervalIndicies]);
+  }, [rankIntervalIndicies, ranks]);
 
   const renderRankShields = useCallback(() => (
     rankRange.map((rank, index) => (
@@ -63,6 +63,7 @@ const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
           width={621} 
           height={621}
           priority
+          alt={rank.name}
         />
         <SPrelimRankBadge>
           {rank.name}
