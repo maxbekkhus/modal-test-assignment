@@ -44,16 +44,16 @@ const PrelimRank: FC<PrelimRankProps> = ({ ranks, userElo }) => {
     return (
       <Paragraph center>
         {jsonText.rankInterval[0]}
-        <SPrelimRankSpan color={ranks[low].textColor}>
-          {ranks[low].name}
+        <SPrelimRankSpan color={rankRange[low].textColor}>
+          {rankRange[low].name}
         </SPrelimRankSpan>
         {jsonText.rankInterval[1]}
-        <SPrelimRankSpan color={ranks[high].textColor}>
-          {ranks[high].name}
+        <SPrelimRankSpan color={rankRange[high].textColor}>
+          {rankRange[high].name}
         </SPrelimRankSpan>
       </Paragraph>
     )
-  }, [rankIntervalIndicies, ranks]);
+  }, [rankIntervalIndicies, rankRange]);
 
   const renderRankShields = useCallback(() => (
     rankRange.map((rank, index) => (

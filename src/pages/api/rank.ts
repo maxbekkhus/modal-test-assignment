@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { BASE_URL } from 'src/constants';
 import { Rank } from 'src/models/Rank';
 import jsonRanks from 'src/resources/ranks.json';
 

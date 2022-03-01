@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   }, [router]);
 
   if(error) {
-    alert('Fetch error');
+    alert(error);
   }
 
   if(!data || userElo === null) {
